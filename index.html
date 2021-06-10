@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm good!</p>
-</body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>Mr. Fullop</title>
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+  </head>
+  <body id="body">
+    <div class="progressbar" id="progressbar"></div>
+    <div class="scrollPath"></div>
+    <div class="container" id="container">
+      <section class="pages pageone">
+        <h1>Mr. Fullop</h1></br>
+        <h2>c#, python, c++, html, php, javascript and css developer</h2>
+      </section>
+      <section class="pages pagetwo">
+        <h1>Most popular projects:</h1>
+        <ul>
+          <li>Redmenta killer</li>
+          <li>Focus</li>
+          <li>Minecraft server creator</li>
+        </ul>
+      </section>
+      <section class="pages pagethree">
+        <h1>I'm working on it</h1>
+      </section>
+    </div>
+    <script type="text/javascript">
+      let progress = document.getElementById('progressbar');
+      let totalHeight = $("#container").height() * 2;
+
+      console.log("Loaded");
+      $( "#container" ).scroll(function() {
+        var yOffset = $("#container").scrollTop();
+        let progressHeight = (yOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+      });
+    </script>
+  </body>
 </html>
